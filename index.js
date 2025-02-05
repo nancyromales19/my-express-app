@@ -12,6 +12,13 @@ app.get('/about', (req, res) => {
     res.send('About Us');
 });
 
+app.use(express.json());
+
+app.post('/submit', (req, res) =>{
+    const data = req.body;
+    res.send(`Received: ${JSON.stringfy(data)}`);
+});
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
