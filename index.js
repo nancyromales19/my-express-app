@@ -26,6 +26,12 @@ app.post('/submit', (req, res) =>{
     res.send(`Received: ${JSON.stringify(data)}`);
 });
 
+app.post('/items', (req, res) => {
+    const newItem = req.body.item;
+    items.push(newItem);
+    res.json(items);
+});
+
 app.get('/', (req,res) => {
     res.send('Hello World');
 });
